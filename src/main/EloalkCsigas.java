@@ -7,7 +7,8 @@ package main;
 public class EloalkCsigas {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        Verseny3 v = new Verseny3();
+        v.versenyezz();
     }
     
 }

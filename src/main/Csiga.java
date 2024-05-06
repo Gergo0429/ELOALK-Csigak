@@ -16,14 +16,14 @@ public class Csiga {
         lepesek = new ArrayList<>();
     }
     
-    public void Lep() {
+    public void lep() {
         Random random = new Random();
         int randomSzam = random.nextInt(4);
         lepesek.add(randomSzam);
         pozicio += randomSzam;
     }
     
-    public void Gyorsito() {
+    public void gyorsit() {
         int utolsoIndex = lepesek.size() - 1;
         int utolsoLepes = lepesek.get(utolsoIndex);
         int utolsoLepesGyorsitoval = utolsoLepes * 2;
@@ -31,11 +31,11 @@ public class Csiga {
         pozicio += utolsoLepes;
     }
     
-    public Integer Pozicio() {
+    public Integer pozicio() {
         return pozicio;
     }
     
-    public Integer UtolsoLepes() {
+    public Integer utolsoLepes() {
         return lepesek.get(lepesek.size() - 1);
     }
 }
