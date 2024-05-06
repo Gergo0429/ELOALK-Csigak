@@ -11,28 +11,39 @@ public class Verseny3 {
     private Csiga zold = new Csiga();
     private Csiga kek = new Csiga();
     
-    public void versenyezz() {
-        versenyezz(5);
+    public char versenyezz() {
+        return versenyezz(5);
     }
 
-    public void versenyezz(int korok) {
+    public char versenyezz(int korok) {
         for (int i = 1; i <= korok; i++) {
             System.out.println("----------- " + i + ". kor -----------");
             
             piros.lep();
-            System.out.println("Piros: " + piros.utolsoLepes());
             zold.lep();
-            System.out.println(" Zold: " + zold.utolsoLepes());
             kek.lep();
-            System.out.println("  Kek: " + kek.utolsoLepes());
             
+            //gyorsito1();
             gyorsito2();
+            
+            System.out.println("Piros: " + piros.utolsoLepes());
+            System.out.println(" Zold: " + zold.utolsoLepes());
+            System.out.println("  Kek: " + kek.utolsoLepes());  
         }
         
-        System.out.println("----------- vegso eredmeny -----------");
+        System.out.println("------- vegso eredmeny -------");
         System.out.println("Piros: " + piros.pozicio());
         System.out.println(" Zold: " + zold.pozicio());
         System.out.println("  Kek: " + kek.pozicio());
+        
+        if(piros.pozicio() > zold.pozicio() && piros.pozicio() > kek.pozicio()) //piros gyoz
+            return 'p';
+        else if(zold.pozicio() > piros.pozicio() && zold.pozicio() > kek.pozicio()) //zold gyoz
+            return 'z';
+        else if(kek.pozicio() > piros.pozicio() && kek.pozicio() > zold.pozicio()) //kek gyoz
+            return 'k';
+        else return 'e'; //egyenloseg
+
     }
     
     public void gyorsito1() {
